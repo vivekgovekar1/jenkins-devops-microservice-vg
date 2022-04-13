@@ -1,9 +1,17 @@
 pipeline {
- 	agent { docker { image 'node:13.8' } }  
+ 	agent any 
+	 
+		environment {
+			dockerHome = tool 'dockervg'
+			mavenHome = tool 'vgmaven'
+			PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
+		}    
 		stages {
 			stage("Build") {
 				steps {
 					echo "Build -1"
+					sh 'mvn --version'
+					sh 'docker version'
 				}
 			}
 			stage("Test") {
