@@ -1,6 +1,5 @@
 pipeline {
- 
-	agent { 
+ 	agent { 
 		docker {
 			image 'maven:3.6.3'
 			label 'docker'
@@ -27,7 +26,7 @@ pipeline {
 		post{
 			always{
 				echo ">> In Post Always"
-			}
+			} 
 			success{
 				echo ">> In Post success"
 			}
