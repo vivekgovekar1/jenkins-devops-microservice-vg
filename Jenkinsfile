@@ -23,7 +23,7 @@ pipeline {
 					echo "Intgration Test -1"
 				}
 			}
-		}
+		} 
 		post{
 			always{
 				echo ">> In Post Always"
