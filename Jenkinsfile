@@ -17,4 +17,16 @@ pipeline {
 				}
 			}
 		}
-	}
+		post{
+			always{
+				echo ">> In Post Always"
+			}
+			success{
+				echo ">> In Post success"
+			}
+			failure {
+				echo ">> In Post failure"
+
+			}
+	   }
+}  
